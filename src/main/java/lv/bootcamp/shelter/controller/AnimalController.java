@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * REST controller for shelter animal operations.
  * <p>
- * Designed for MockMvc exercises in A4:
+ * Designed for MockMvc exercises:
  * - GET endpoints for listing/retrieving animals
  * - POST endpoint for creating animals (validates request body)
  * - POST endpoint for adopting animals (combines service + notification)

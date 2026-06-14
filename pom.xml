@@ -15,7 +15,7 @@
     <artifactId>shelter-testing</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>shelter-testing</name>
-    <description>A4 Advanced Unit Testing — starter project for Mockito, MockMvc, JPA, and integration tests</description>
+    <description>Advanced Unit Testing starter project for Mockito, MockMvc, JPA, and integration tests</description>
 
     <properties>
         <java.version>21</java.version>

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * Page controller — renders Thymeleaf views.
  * Returns view names, never JSON.
  *
- * Used in A4 to practice testing @Controller with view().name()
+ * Used to practice testing @Controller with view().name()
  * and model().attribute() instead of jsonPath().
  */
 @Controller

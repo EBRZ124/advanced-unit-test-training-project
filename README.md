@@ -1,6 +1,6 @@
-# Shelter Testing Starter — A4 Advanced Unit Testing
+# Shelter Testing Starter — Advanced Unit Testing
 
-This Spring Boot project is pre-built for module A4.
+This Spring Boot project is pre-built for Advanced Unit Testing.
 Students do **not** build this from scratch — they add and modify tests.
 
 ## Domain
@@ -82,4 +82,4 @@ src/test/java/lv/bootcamp/shelter/
 
 - Java 21
 - Maven 3.9+
-- Module F5 (Basic Unit Testing) completed
+- Basic JUnit testing experience
