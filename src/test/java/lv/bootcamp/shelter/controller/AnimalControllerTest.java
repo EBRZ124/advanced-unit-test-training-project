@@ -1,6 +1,7 @@
 package lv.bootcamp.shelter.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lv.bootcamp.shelter.config.SecurityConfig;
 import lv.bootcamp.shelter.dto.AnimalCreateRequest;
 import lv.bootcamp.shelter.dto.AnimalResponse;
 import lv.bootcamp.shelter.model.AnimalStatus;
@@ -10,6 +11,7 @@ import lv.bootcamp.shelter.service.AnimalService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.context.annotation.Import;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
@@ -29,6 +31,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * and chain .andExpect() calls to verify status, JSON content, and error responses.
  */
 @WebMvcTest(AnimalController.class)
+@Import(SecurityConfig.class)
 class AnimalControllerTest {
 
     @Autowired
@@ -50,10 +53,9 @@ class AnimalControllerTest {
 
     @Test
     void findById_shouldReturn404WhenNotFound() throws Exception {
-        // TODO:
-        // 1. Stub animalService.findById(99L) to throw AnimalNotFoundException
-        // 2. GET /api/animals/99
-        // 3. Assert status 404
+        when(animalService.findById(99L)).thenThrow(new AnimalNotFoundException(99L));
+
+        mockMvc.perform(get("/api/animals/99")).andExpect(status().isNotFound());
     }
 
     @Test
